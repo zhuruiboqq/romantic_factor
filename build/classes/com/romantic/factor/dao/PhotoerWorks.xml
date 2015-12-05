@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.romantic.factor.dao.PhotoerWorksDao">
+	
+	<resultMap type="PhotoerWorks" id="PhotoerWorks">
+		<result property="id" column="id" />
+		<result property="photoer_id" column="photoer_id" />
+		<result property="date" column="date" />
+		<result property="address" column="address" />
+		<result property="priority" column="priority" />
+		<result property="img_url" column="img_url" />
+	</resultMap>
+	
+
+	<select id="selectPhotoerWorks" parameterType="int" resultMap="PhotoerWorks">
+		
+		select * from photoer_works where photoer_id=#{photoer_id} order by priority desc limit #{pageid},#{pageSize};
+	</select>
+	
+	<select id="countPhotoerWorks" parameterType="int" resultType="int">
+		
+		select count(1) from photoer_works where photoer_id=#{photoer_id};
+	</select>
+	
+	<select id="selectAllPhotoerWorks" parameterType="int" resultMap="PhotoerWorks">
+		
+		select * from photoer_works where photoer_id=#{photoer_id};
+	</select>
+	
+</mapper>

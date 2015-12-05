@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.romantic.factor.dao.DressDao">
+	
+	<resultMap type="Dress" id="Dress">
+		<result property="id" column="id" />
+		<result property="photoer_id" column="photoer_id" />
+		<result property="name" column="name" />
+		<result property="degree" column="degree" />
+		<result property="type" column="type" />
+		<result property="img_url" column="img_url" />
+	</resultMap>
+	
+
+	<select id="selectDress" parameterType="int" resultMap="Dress">
+		select  a.id as id,b.name as name,b.degree as degree,a.type as type,a.img_url as img_url from dress a left join photoer b 
+		on a.type=#{type} and a.photoer_id=b.id order by a.priority desc limit #{pageid},#{pageSize};
+		<!-- select a.id as id,b.name as name,b.degree as degree,a.type as type,a.img_url as img_url from dress a,photoer b where a.type=#{type} and a.photoer_id=b.id
+		 limit #{pageid},#{pageSize}; -->
+	</select>
+	
+	<select id="countDress" parameterType="int" resultType="int">
+		
+		select count(1) from dress where type=#{type};
+	</select>
+	
+		
+	<select id="selectAllDress" parameterType="int" resultMap="Dress">
+		select * from dress where type=#{type};
+	</select>
+	
+	
+</mapper>
