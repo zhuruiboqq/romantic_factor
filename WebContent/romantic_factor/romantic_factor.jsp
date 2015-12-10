@@ -1,3 +1,4 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,23 +12,8 @@
 <body>
 	
 	<div class="header_content index_header">
-		<!--<img id="header_logo_img" src="images/logo.png" />-->
-            <div class="nav_content">
-            	<a href="romanticFactor.do"><img src="images/logo.png" /></a>
-                <nav class="header_nav">
-                    <ul>
-                        <li class="header_li_1"><a href="brandStory.do"><p>關於我們</p><span>about us</span></a></li>
-                        <li class="header_li_2"><a href="photoer.do?page=1"><p>攝影作品</p><span>PHOTOGRAPHY</span></a></li>
-                        <li class="header_li_3"><a href="makeupMakeer.do?page=1"><p>化妝作品</p><span>MAKEUP</span></a></li>
-                        <li class="header_li_4"><a href="dress.do?page=1&type=1"><p>禮服欣賞</p><span>DRESS</span></a></li>
-                        <li class="header_li_5"><a href="mealIntroduce.do"><p>套餐介紹</p><span>PACKAGE</span></a></li>
-                        <li class="header_li_6"><a href="training.do"><p>培訓</p><span>TRAINING</span></a></li>
-                        <li class="header_li_7"><a href="JavaScript:;"><p>婚禮策劃</p><span>WEDDING</span></a></li>
-                        <li class="header_li_8"><a href="JavaScript:;"><p>錄像</p><span>VIDEO</span></a></li>
-                        <li class="header_li_9"><a href="JavaScript:;"><p>主持人</p><span>HOST</span></a></li>
-                    </ul>
-                </nav>
-            </div>
+		<!-- <img id="header_logo_img" src="images/logo.png" /> -->
+           <%@ include file="/tpl/head_nav.jsp" %>
         </div>
     
     <div class="index_content" id="index_wrap_e">
@@ -74,7 +60,7 @@
         <div class="content_box content_list2">
         	<div id="content_list2">
                 <div class="content_box_title2">
-                    <h1>攝影作品</h1>
+                    <h1>摄影作品</h1>
                     <h2>PHOTOGRAPHY</h2>
                 </div>
                 <div class="content_list2_groundpics center">
@@ -83,8 +69,8 @@
                 </div>
                 <div class="content_list2_story">
                     <h2>ROMANTIC FACTOR</h2>
-                    <h1>羅蔓緣素</h1>
-                    <p><font size="4">羅蔓緣素（ROMANTIC FACTOR)是一個包含攝影、化妝、錄像、婚慶、禮服、主持等元素的一站式服務展示平台。由於這些元素服務以發現及挖掘真、善、美的宗旨，呈現最美好的作品給用戶，尤其針對即將結婚的用戶群，為他們提供一系列的婚禮元素服務，緣起，緣聚，故取名“羅蔓緣素”。</font></p>
+                    <h1>罗蔓缘素</h1>
+                    <p><font size="4">罗蔓缘素（ROMANTIC FACTOR)是一个包含摄影、化妆、录像、婚庆、礼服、主持等元素的一站式服务展示平台。由于这些元素服务以发现及挖掘真、善、美的宗旨，呈现最美好的作品给用户，尤其针对即将结婚的用户群，为他们提供一系列的婚礼元素服务，缘起，缘聚，故取名“罗蔓缘素”。</font></p>
                 </div>
                 <div class="content_list2_lunbo" id="banner2_e">
                     <ul class="banner_ul2">
@@ -259,15 +245,15 @@
                     </div>
                     <div class="contnet_four_left_info">
                     	<div class="introduce_us">
-                        	<h1>羅蔓緣素文化</h1>
-                         	<p>使命：通過互聯網信息整合讓人們生活省時省力省心<br/>
-										願景：人人信賴的婚禮服務信息平台<br/>
-										品牌定位：浪漫時刻，由選擇羅蔓開始  <br/>   
-							 核心價值觀：用戶第一、尊重選擇、主動協作、創新精神、努力成長</p>
+                        	<h1>罗蔓缘素文化</h1>
+                         	<p>使命：通过互联网信息整合让人们生活省时省力省心<br/>
+										愿景：人人信赖的婚礼服务信息平台<br/>
+										品牌定位：浪漫時刻，由选择罗蔓开始  <br/>   
+							 核心价值观：用户第一、尊重选择、主动协作、创新精神、努力成长</p>
                         </div>
                         <div class="introduce_us_more">
                         	<img src="images/logo2.png" />
-                            <p>羅蔓緣素致力於打造一個遵循市場規則，貨真價實，給予用戶自由選擇的婚禮服務平台，讓消費者省時省力省心地自由選擇服務。</p>
+                            <p>罗蔓缘素致力于打造一个遵循市场规则，货真价实，给予用户自由选择的婚礼服务平台，让消费者省时省力省心地自由选择服务。</p>
                             <a href="mealIntroduce.do">MORE+</a>
                         </div>
                    	</div>
@@ -277,14 +263,14 @@
                     		<img src="images/index_pic2.jpg" />
                         	<!-- <a href="mealIntroduce.do" target="_blank"><img src="images/index_pic2.jpg" /></a> -->
                             <span class="meal_name_en">ROMANTIC SERIES</span>
-                            <span class="meal_name_ch">浪漫攝影系列</span>
+                            <span class="meal_name_ch">浪漫摄影系列</span>
                             <div class="pic_mouseover_see">
                             	<div class="line"></div>
                                 <div class="money">
                                 	<span>CNY</span><span>9980</span>
                                     <span>ROMANTIC SERIES</span>
-                                    <span>浪漫攝影系列</span>
-                                    <span>【拍攝路線】</span><span>九龍湖/大觀園/鶴城環球影城</span>
+                                    <span>浪漫摄影系列</span>
+                                    <span>【拍摄路线】</span><span>九龙湖/大观园/鹤山环球影城</span>
                                 </div>
                             </div>
                         </div>
@@ -293,14 +279,14 @@
                         <div class="content_four_pic_unit">
                         	<img src="images/index_pic3.jpg" />
                             <span class="meal_name_en">LUXURY SERIES</span>
-                            <span class="meal_name_ch">奢華攝影系列</span>
+                            <span class="meal_name_ch">奢华摄影系列</span>
                             <div class="pic_mouseover_see">
                             	<div class="line"></div>
                                 <div class="money">
                                 	<span>CNY</span><span>7980</span>
                                     <span>LUXURY SERIES</span>
-                                    <span>奢華攝影系列</span>
-                                    <span>【拍攝路線】</span><span>九龍湖/大觀園/鶴城環球影城</span>
+                                    <span>奢华摄影系列</span>
+                                    <span>【拍摄路线】</span><span>九龙湖/大观园/鹤山环球影城</span>
                                 </div>
                             </div>
                         </div>
@@ -309,14 +295,14 @@
                         <div class="content_four_pic_unit">
                         	<img src="images/index_pic4.jpg" />
                             <span class="meal_name_en">THE LEISURE SERIES</span>
-                            <span class="meal_name_ch">休閒攝影系列</span>
+                            <span class="meal_name_ch">休闲摄影系列</span>
                             <div class="pic_mouseover_see">
                             	<div class="line"></div>
                                 <div class="money">
                                 	<span>CNY</span><span>7980</span>
                                     <span>THE LEISURE SERIES</span>
-                                    <span>休閒攝影系列</span>
-                                    <span>【拍攝路線】</span><span>九龍湖/大觀園/鶴城環球影城</span>
+                                    <span>休闲摄影系列</span>
+                                    <span>【拍摄路线】</span><span>九龙湖/大观园/鹤山环球影城</span>
                                 </div>
                             </div>
                         </div>
@@ -325,14 +311,14 @@
                         <div class="content_four_pic_unit">
                         	<img src="images/index_pic5.jpg" />
                             <span class="meal_name_en">EXALTED SERIES</span>
-                            <span class="meal_name_ch">尊貴攝影系列</span>
+                            <span class="meal_name_ch">尊贵摄影系列</span>
                             <div class="pic_mouseover_see">
                             	<div class="line"></div>
                                 <div class="money">
                                 	<span>CNY</span><span>16980</span>
                                     <span>EXALTED SERIES</span>
-                                    <span>尊貴攝影系列</span>
-                                    <span>【拍攝路線】</span><span>澳門</span>
+                                    <span>尊贵摄影系列</span>
+                                    <span>【拍摄路线】</span><span>澳门</span>
                                 </div>
                             </div>
                         </div>
@@ -341,12 +327,12 @@
                 </div>
             </div>
             <footer style="position:absolute; bottom:0px;min-width:700px">
-                <div class="left">© Romantic factor - 2015保留所有權利 <a>   粤ICP备15086517       </a>  
-                    <a class="frist" href="mealLeaveWords.do">聯繫方式</a>
+                <div class="left">© Romantic factor - 2015保留所有权利 <a>   粤ICP备15086517       </a>  
+                    <a class="frist" href="mealLeaveWords.do">联系方式</a>
                     <span>-</span>
-                    <a href="brandPromise.do">消費保證</a>
+                    <a href="brandPromise.do">消费保证</a>
                     <span>-</span>
-                    <a href="brandAboutPrivacy.do">關於隱私</a>
+                    <a href="brandAboutPrivacy.do">关于隐私</a>
                 </div>
                 <div class="right"><a href="mealLeaveWords.do">留言板</a></div>
             </footer>
@@ -359,12 +345,12 @@
     
       
     <!--<footer>
-    	<div class="left">© Romantic factor - 2015保留所有權利 <a>   粤ICP备15086517       </a>  
-        	<a class="frist" href="mealLeaveWords.do">聯繫方式</a>
+    	<div class="left">© Romantic factor - 2015保留所有权利 <a>   粤ICP备15086517       </a>  
+        	<a class="frist" href="mealLeaveWords.do">联系方式</a>
             <span>-</span>
-            <a href="brandPromise.do">消費保證</a>
+            <a href="brandPromise.do">消费保证</a>
             <span>-</span>
-            <a href="brandAboutPrivacy.do">關於隱私</a>
+            <a href="brandAboutPrivacy.do">关于隐私</a>
         </div>
         <div class="right"><a href="mealLeaveWords.do">留言板</a></div>
     </footer>-->

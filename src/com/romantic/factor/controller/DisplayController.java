@@ -84,7 +84,7 @@ public class DisplayController {
 		List<MakeupMakeer> list=makeupMakeerService.selectMakeupMakeer(makeupMakeer);
 		int pageCount=makeupMakeerService.countMakeupMakeer();
 		int page=pageCount/12+1;
-		model.addAttribute("makeupMakeerList", list);
+		model.addAttribute("artistList", list);
 		model.addAttribute("pageCount", page);
 		model.addAttribute("pageid",pageid);
 		pageHandle(pageid, model, page);
@@ -139,28 +139,24 @@ public class DisplayController {
 	}
 	
 	@RequestMapping(value = "/makeupWorks.do")
-	public String makeupWorks(HttpServletRequest req,@RequestParam("page") Integer pageid,@RequestParam("makeer_id") Integer makeer_id,Model model) {
+	public String makeupWorks(HttpServletRequest req,@RequestParam("page") Integer pageid,@RequestParam("artistID") Integer artistID,Model model) {
 		try{
-		if(makeer_id<1||pageid<1){
+		if(artistID<1||pageid<1){
 			return null;
 		}
 		MakeupWorks makeupWorks= new MakeupWorks();
 		makeupWorks.setPageid((pageid-1)*12);
 		makeupWorks.setPageSize(12);
-		makeupWorks.setMakeer_id(makeer_id);
+		makeupWorks.setMakeer_id(artistID);
 		List<MakeupWorks> list=makeupWorksService.selectMakeupWorks(makeupWorks);
-		int pageCount=makeupWorksService.countMakeupWorks(makeer_id);
+		int pageCount=makeupWorksService.countMakeupWorks(artistID);
 		int page=pageCount/12+1;
 		//Photoer photoer = photoerService.selectPhotoerByid(makeer_id);
-		MakeupMakeer makeupMakeer=makeupMakeerService.selectMakeupMakeerByid(makeer_id);
-		model.addAttribute("makeupWorksList", list);
+		MakeupMakeer artistInfo=makeupMakeerService.selectMakeupMakeerByid(artistID);
+		model.addAttribute("worksList", list);
 		model.addAttribute("pageCount", page);
-		model.addAttribute("makeupMakeer", makeupMakeer);
+		model.addAttribute("artistInfo", artistInfo);
 		model.addAttribute("pageid",pageid);
-		req.setAttribute("id", makeupMakeer.getId());
-		req.setAttribute("name", makeupMakeer.getName());
-		req.setAttribute("degree", makeupMakeer.getDegree());
-		req.setAttribute("content", makeupMakeer.getContent());
 		pageHandle(pageid, model, page);
 		
 		
@@ -185,7 +181,7 @@ public class DisplayController {
 		List<Photoer> list=photoerService.selectPhotoer(p);
 		int pageCount=photoerService.countPhotoer();
 		int page=pageCount/12+1;
-		model.addAttribute("photoerList", list);
+		model.addAttribute("artistList", list);
 		model.addAttribute("pageCount", page);
 		model.addAttribute("pageid",pageid);
 		pageHandle(pageid, model, page);
@@ -201,26 +197,23 @@ public class DisplayController {
 	}
 	
 	@RequestMapping(value = "/photoerWorks.do")
-	public String photoerWorks(HttpServletRequest req,@RequestParam("page") Integer pageid,@RequestParam("photoer_id") Integer photoer_id,Model model) {
+	public String photoerWorks(HttpServletRequest req,@RequestParam("page") Integer pageid,@RequestParam("artistID") Integer artistID,Model model) {
 		try{
-		if(photoer_id<1||pageid<1){
+		if(artistID<1||pageid<1){
 			return null;
 		}
 		PhotoerWorks p= new PhotoerWorks();
 		p.setPageid((pageid-1)*12);
 		p.setPageSize(12);
-		p.setPhotoer_id(photoer_id);
+		p.setPhotoer_id(artistID);
 		List<PhotoerWorks> list=photoerWorksService.selectPhotoerWorks(p);
 		int pageCount=photoerWorksService.countPhotoerWorks(p);
 		int page=pageCount/12+1;
-		Photoer photoer = photoerService.selectPhotoerByid(photoer_id);
-		model.addAttribute("photoerWorksList", list);
+		Photoer artistInfo = photoerService.selectPhotoerByid(artistID);
+		model.addAttribute("worksList", list);
 		model.addAttribute("pageCount", page);
-		model.addAttribute("photoer", photoer);
+		model.addAttribute("artistInfo", artistInfo);
 		model.addAttribute("pageid",pageid);
-		req.setAttribute("name", photoer.getName());
-		req.setAttribute("degree", photoer.getDegree());
-		req.setAttribute("content", photoer.getContent());
 		
 
 		pageHandle(pageid, model, page);
@@ -274,7 +267,7 @@ public class DisplayController {
 	
 	@RequestMapping(value = "/romanticFactor.do")
 	public String romanticFactor() {
-		return "romantic_factor/romantic_factor.html";
+		return "romantic_factor/romantic_factor.jsp";
 	}
 	
 	@RequestMapping(value = "/training.do")
