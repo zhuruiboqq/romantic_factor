@@ -28,18 +28,21 @@ public class PageHandler {
 	}
 
 	public void processModel(Model model) {
+		if (totalPageSize == 0) {
+			totalPageSize = totalRecordCount / perPageSize + (totalRecordCount % perPageSize != 0 ? 1 : 0);
+		}
 		model.addAttribute("pageHandler", this);
-//		model.addAttribute("curPageResultList", curPageResultList);
-//		model.addAttribute("curPageIndex", curPageIndex);
-//		model.addAttribute("perPageSize", perPageSize);
-//		model.addAttribute("totalRecordCount", totalRecordCount);
-//		model.addAttribute("totalPageSize", totalPageSize);
-		
+		//		model.addAttribute("curPageResultList", curPageResultList);
+		//		model.addAttribute("curPageIndex", curPageIndex);
+		//		model.addAttribute("perPageSize", perPageSize);
+		//		model.addAttribute("totalRecordCount", totalRecordCount);
+		//		model.addAttribute("totalPageSize", totalPageSize);
+
 		//控制按钮是否显示
-		model.addAttribute("isShowFirstPage", curPageIndex!=1);//首页
-		model.addAttribute("isShowPrePage", curPageIndex!=1);//上一页
-		model.addAttribute("isShowNextPage", curPageIndex!=1);//下一页
-		model.addAttribute("isShowLastPage", curPageIndex!=totalPageSize);//尾页
+		model.addAttribute("isShowFirstPage", curPageIndex != 1);//首页
+		model.addAttribute("isShowPrePage", curPageIndex != 1);//上一页
+		model.addAttribute("isShowNextPage", curPageIndex != 1);//下一页
+		model.addAttribute("isShowLastPage", curPageIndex != totalPageSize);//尾页
 	}
 
 	private void pageHandle(Model model) {
@@ -80,7 +83,6 @@ public class PageHandler {
 			}
 		}
 	}
-	
 
 	public int getCurPageIndex() {
 		return curPageIndex;

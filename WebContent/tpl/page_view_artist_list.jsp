@@ -54,14 +54,14 @@
 		<c:if test="${pageHandler.curPageIndex lt pageHandler.totalPageSize}">
 			<a class="next_btn" href="${param.currentPageURL}?page=${pageHandler.curPageIndex+1}">${pageHandler.curPageIndex+1}</a>
 		</c:if>
-		<c:if test="${pageHandler.curPageIndex-1 lt pageHandler.totalPageSize}">
+		<c:if test="${pageHandler.curPageIndex+1 lt pageHandler.totalPageSize}">
 			<a class="next_btn" href="${param.currentPageURL}?page=${pageHandler.curPageIndex+2}">${pageHandler.curPageIndex+2}</a>
 		</c:if>
 		<c:if test="${pageHandler.curPageIndex ne pageHandler.totalPageSize}">
 			<a href="${param.currentPageURL}?page=${pageHandler.curPageIndex+1}">下一页</a>
 			<a class="fri_btn" href="${param.currentPageURL}?page=${pageHandler.totalPageSize}">尾頁</a>
 		</c:if>
-
+第 ${pageHandler.curPageIndex } / ${pageHandler.totalPageSize } 页， 总记录：${pageHandler.totalRecordCount }，每页显示：${pageHandler.perPageSize}
 		<%--
 		<c:choose>
 			<c:when test="${pageid==page}">

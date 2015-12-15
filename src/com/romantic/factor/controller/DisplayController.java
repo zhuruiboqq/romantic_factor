@@ -183,6 +183,7 @@ public class DisplayController {
 			pageHandler.setCurPageResultList(pageResultList);
 			pageHandler.processModel(model);
 			
+			model.addAttribute("type", type);
 			return "romantic_factor/dress_wedding.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
