@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 
+import com.romantic.factor.common.util.PageHandler;
 import com.romantic.factor.dao.MakeupMakeerDao;
 import com.romantic.factor.entity.MakeupMakeer;
 
@@ -13,12 +14,12 @@ public class MakeupMakeerService {
 	@Autowired
 	private MakeupMakeerDao makeupMakeerDao;
 	
-	@Cacheable(value = "selectMakeupMakeer", key = "#p0.pageid")
-	public List<MakeupMakeer> selectMakeupMakeer(MakeupMakeer makeupMakeer){
-		if(makeupMakeer==null){
+	@Cacheable(value = "selectMakeupMakeer", key = "#p0.curPageIndex")
+	public List<MakeupMakeer> selectMakeupMakeer(PageHandler pageHandler){
+		if(pageHandler==null){
 			return null;
 		}
-		return makeupMakeerDao.selectMakeupMakeer(makeupMakeer.getPageid(),makeupMakeer.getPageSize());
+		return makeupMakeerDao.selectMakeupMakeer(pageHandler.getStartIndex(),pageHandler.getPerPageSize());
 	}
 	@Cacheable(value = "countMakeupMakeer", key = "0")
 	public int countMakeupMakeer(){

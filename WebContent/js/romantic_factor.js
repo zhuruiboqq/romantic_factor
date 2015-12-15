@@ -8,7 +8,7 @@ $(function(){
 //	 },function(){
 //	 	$(".nav_content").animate({"opacity":"0.0","filter":"alpha(opacity=0)"},800);
 //	 });
-//	
+	
 	/*鼠标经过头部菜单 end*/
 	
 	//头部图片轮播 start
@@ -313,8 +313,4 @@ var imgaddurl = function () {
 $('.big_pic').on('click', 'img', function(event) {
 	window.open( this.src );
 });
-
-
-
-	
 });

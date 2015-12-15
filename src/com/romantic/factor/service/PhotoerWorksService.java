@@ -7,6 +7,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 
+import com.romantic.factor.common.util.PageHandler;
 import com.romantic.factor.dao.PhotoerWorksDao;
 import com.romantic.factor.entity.PhotoerWorks;
 
@@ -14,17 +15,16 @@ public class PhotoerWorksService {
 	@Autowired
 	private PhotoerWorksDao photoerWorksDao;
 	
-	@Cacheable(value = "selectPhotoerWorks", key = "#p0.photoer_id+'_'+#p0.pageid")
-	public List<PhotoerWorks> selectPhotoerWorks(PhotoerWorks photoerWorks){
-		if(photoerWorks==null){
+	@Cacheable(value = "selectPhotoerWorks", key = "#p1+'_'+#p0.curPageIndex")
+	public List<PhotoerWorks> selectPhotoerWorks(PageHandler pageHandler, int artistID){
+		if(pageHandler==null){
 			return null;
 		}
-		return photoerWorksDao.selectPhotoerWorks(photoerWorks.getPageid(),photoerWorks.getPageSize(),photoerWorks.getPhotoer_id());
+		return photoerWorksDao.selectPhotoerWorks(pageHandler.getStartIndex(), pageHandler.getPerPageSize(), artistID);
 	}
 	@Cacheable(value = "countPhotoerWorks", key = "0")
-	public int countPhotoerWorks(PhotoerWorks photoerWorks){
-		
-		return photoerWorksDao.countPhotoerWorks(photoerWorks.getPhotoer_id());
+	public int countPhotoerWorks(int artistID){
+		return photoerWorksDao.countPhotoerWorks(artistID);
 	}
 	@Cacheable(value = "aboutPhotoerWorks", key = "#p0")
 	public List<PhotoerWorks> aboutPhotoerWorks(PhotoerWorks photoerWorks){

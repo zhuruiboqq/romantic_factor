@@ -48,5 +48,6 @@
 
 	<jsp:include page="/tpl/page_view_only_works_list.jsp">
 		<jsp:param name="currentPageURL" value="${param.currentPageURL}" />
+		<jsp:param name="detailURLParams" value="artistID=${artistInfo.id}" />
 	</jsp:include>
 </article>

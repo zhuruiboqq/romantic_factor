@@ -2,7 +2,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<% int i=0; %>
 <article class="">
 	<div class="footer_name_content dress_not_footer">
 		<div class="footer_top">
@@ -30,38 +29,40 @@
 	</nav>
 
 	<ul class="dress_content_list fix">
-		<c:forEach var="artistInfo" items="${artistList}">
-			<%
-				i++;
-					if (i % 4 == 1) {
-			%>
-			<li class="dress_content_list_fri"><a href="${param.childPageURL}?page=1&artistID=${artistInfo.id}"><img src="${artistInfo.img_url}" /></a> <span
-				class="en">${artistInfo.name}</span><span>${artistInfo.degree}</span>
-			<div>
+		<c:forEach var="artistInfo" items="${pageHandler.curPageResultList}" varStatus="varStatus">
+			<li ${varStatus.index%4==0?"class=\"dress_content_list_fri\"":"" }><a href="${param.childPageURL}?page=1&artistID=${artistInfo.id}"><img
+					src="${artistInfo.img_url}" /></a> <span class="en">${artistInfo.name}</span><span>${artistInfo.degree}</span>
+				<div>
 					<a href="${param.childPageURL}?page=1&artistID=${artistInfo.id}">作品</a><a href="mealIntroduce.do">套餐</a>
 				</div></li>
-
-			<%
-				} else {
-			%>
-			<li><a href="${param.childPageURL}?page=1&artistID=${artistInfo.id}"><img src="${artistInfo.img_url}" /></a> <span class="en">${artistInfo.name}</span><span>${artistInfo.degree}</span>
-			<div>
-					<a href="${param.childPageURL}?page=1&artistID=${artistInfo.id}">作品</a><a href="mealIntroduce.do">套餐</a>
-				</div></li>
-			<%
-				}
-			%>
-
 		</c:forEach>
 
 	</ul>
 
 	<div class="dress_btns">
-		<a class="fri_btn" href="${param.currentPageURL}?page=1">首頁</a>
-		<c:if test="${page_first_ignore eq true}">
-			<a class="fri_btn">...</a>
+		<c:if test="${pageHandler.curPageIndex ne 1}">
+			<a class="fri_btn" href="${param.currentPageURL}?page=1">首頁</a>
+			<a href="${param.currentPageURL}?page=${pageHandler.curPageIndex-1}">上一页</a>
+		</c:if>
+		<c:if test="${pageHandler.curPageIndex gt 2 }">
+			<a class="pre_btn" href="${param.currentPageURL}?page=${pageHandler.curPageIndex-2}">${pageHandler.curPageIndex-2}</a>
+		</c:if>
+		<c:if test="${pageHandler.curPageIndex gt 1 }">
+			<a class="pre_btn" href="${param.currentPageURL}?page=${pageHandler.curPageIndex-1}">${pageHandler.curPageIndex-1}</a>
+		</c:if>
+		<a class="this_btn" href="${param.currentPageURL}?page=${pageHandler.curPageIndex}">${pageHandler.curPageIndex}</a>
+		<c:if test="${pageHandler.curPageIndex lt pageHandler.totalPageSize}">
+			<a class="next_btn" href="${param.currentPageURL}?page=${pageHandler.curPageIndex+1}">${pageHandler.curPageIndex+1}</a>
+		</c:if>
+		<c:if test="${pageHandler.curPageIndex-1 lt pageHandler.totalPageSize}">
+			<a class="next_btn" href="${param.currentPageURL}?page=${pageHandler.curPageIndex+2}">${pageHandler.curPageIndex+2}</a>
+		</c:if>
+		<c:if test="${pageHandler.curPageIndex ne pageHandler.totalPageSize}">
+			<a href="${param.currentPageURL}?page=${pageHandler.curPageIndex+1}">下一页</a>
+			<a class="fri_btn" href="${param.currentPageURL}?page=${pageHandler.totalPageSize}">尾頁</a>
 		</c:if>
 
+		<%--
 		<c:choose>
 			<c:when test="${pageid==page}">
 				<a class="number one this_btn" href="${param.currentPageURL}?page=${page}">${page}</a>
@@ -99,5 +100,6 @@
 		</c:if>
 
 		<a class="next_btn" href="${param.currentPageURL}?page=${nextPage}">下一頁</a> <a class="last_btn" href="${param.currentPageURL}?page=${pageCount}">尾頁</a>
+		 --%>
 	</div>
 </article>

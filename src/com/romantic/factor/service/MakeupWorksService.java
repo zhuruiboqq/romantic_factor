@@ -5,28 +5,29 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 
+import com.romantic.factor.common.util.PageHandler;
 import com.romantic.factor.dao.MakeupWorksDao;
 import com.romantic.factor.entity.MakeupWorks;
-
 
 public class MakeupWorksService {
 	@Autowired
 	private MakeupWorksDao makeupWorksDao;
-	
-	@Cacheable(value = "selectMakeupWorks", key = "#p0.makeer_id+'_'+#p0.pageid")
-	public List<MakeupWorks> selectMakeupWorks(MakeupWorks makeupWorks){
-		if(makeupWorks==null){
+
+	@Cacheable(value = "selectMakeupWorks", key = "#p1+'_'+#p0.curPageIndex")
+	public List<MakeupWorks> selectMakeupWorks(PageHandler pageHandler, int artistID) {
+		if (pageHandler == null) {
 			return null;
 		}
-		return makeupWorksDao.selectMakeupWorks(makeupWorks.getPageid(),makeupWorks.getPageSize(),makeupWorks.getMakeer_id());
+		return makeupWorksDao.selectMakeupWorks(pageHandler.getStartIndex(), pageHandler.getPerPageSize(), artistID);
 	}
+
 	@Cacheable(value = "countMakeupWorks", key = "0")
-	public int countMakeupWorks(int makeer_id){
-		
-		return makeupWorksDao.countMakeupWorks(makeer_id);
+	public int countMakeupWorks(int artistID) {
+		return makeupWorksDao.countMakeupWorks(artistID);
 	}
+
 	@Cacheable(value = "aboutPhotoerWorks", key = "#p0")
-	public List<MakeupWorks> aboutPhotoerWorks(MakeupWorks makeupWorks){
+	public List<MakeupWorks> aboutPhotoerWorks(MakeupWorks makeupWorks) {
 		return makeupWorksDao.selectAllMakeupWorks(makeupWorks.getMakeer_id());
 	}
 }
