@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %> 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
  		<div class="my_top_div">
 	        	<ul class="my_top_ul">
 	        		<li><img src="images/head_pic_sec1.jpg" /></li>

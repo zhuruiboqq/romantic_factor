@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/tpl/taglibs.jsp" %>
 <ul class="dress_content_list fix">
 	<c:forEach var="worksItem" items="${pageHandler.curPageResultList}" varStatus="varStatus">
 		<li ${varStatus.index%4==0?"class=\"dress_content_list_fri\"":"" }><a href="JavaScript:;"><img src="${worksItem.img_url}" /></a> <%-- <span>${worksItem.type}</span>

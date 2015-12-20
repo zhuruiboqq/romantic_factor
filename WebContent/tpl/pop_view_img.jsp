@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--彈窗內容 start-->
 <div class="dress_dialog_bgd" id="fixed_box_e">
 	<div class="dress_dialog_content">

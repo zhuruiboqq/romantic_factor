@@ -1,15 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %> 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>romantic factor</title>
-<link href="css/romantic_factor.css" rel='stylesheet' type='text/css'>
-<script src="js/jquery-1.7.2.min.js" language="jscript" type="text/javascript"></script>
-<script src="js/custom.modernizr.js"></script>
-</head>
-
-<body>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/tpl/taglibs.jsp" %>
+<rf:contentHeader />
 	
 	<div class="header_content index_header">
 		<!-- <img id="header_logo_img" src="images/logo.png" /> -->
@@ -74,11 +65,11 @@
                 </div>
                 <div class="content_list2_lunbo" id="banner2_e">
                     <ul class="banner_ul2">
-                        <li><a href="photoer.do?page=1"><img src="images/index_pic_luobo1.jpg"></a></li>
-                        <li><a href="photoer.do?page=1"><img src="images/index_pic_luobo2.jpg"></a></li>
-                        <li><a href="photoer.do?page=1"><img src="images/zuop1.jpg"></a></li>
-                        <li><a href="photoer.do?page=1"><img src="images/zuop2.jpg"></a></li>
-                        <li><a href="photoer.do?page=1"><img src="images/zuop3.jpg"></a></li>
+                        <li><a href="photoer.do?page=1"><img src="images/index_pic_luobo1.jpg" /></a></li>
+                        <li><a href="photoer.do?page=1"><img src="images/index_pic_luobo2.jpg" /></a></li>
+                        <li><a href="photoer.do?page=1"><img src="images/zuop1.jpg" /></a></li>
+                        <li><a href="photoer.do?page=1"><img src="images/zuop2.jpg" /></a></li>
+                        <li><a href="photoer.do?page=1"><img src="images/zuop3.jpg" /></a></li>
                     </ul>
                     <div class="btns">
                         <a class="now" href="JavaScript:;"></a>
@@ -337,26 +328,8 @@
                 <div class="right"><a href="mealLeaveWords.do">留言板</a></div>
             </footer>
             
-            
-            
        	</div>
     </div>
-       
-    
-      
-    <!--<footer>
-    	<div class="left">© Romantic factor - 2015保留所有权利 <a>   粤ICP备15086517       </a>  
-        	<a class="frist" href="mealLeaveWords.do">联系方式</a>
-            <span>-</span>
-            <a href="brandPromise.do">消费保证</a>
-            <span>-</span>
-            <a href="brandAboutPrivacy.do">关于隐私</a>
-        </div>
-        <div class="right"><a href="mealLeaveWords.do">留言板</a></div>
-    </footer>-->
-    
-</body>
-<script src="js/mousewheel.min.js"></script>
+    <script src="js/mousewheel.min.js"></script>
 <script src="js/mymousewheel.js"></script>
-<!-- <script src="js/romantic_factor.js"></script> -->
-</html>
+<rf:contentFooter/>
