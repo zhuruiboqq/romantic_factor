@@ -1160,8 +1160,9 @@ footer span{margin:auto 5px;}
 .makeer_info img{
 	display:block;
 	float:left;
-	height:385px;
-	width:385px;
+	text-align:center;
+	max-height:350px;
+	max-width:266px;
 }
 .makeer_detail{
 	float:right;
@@ -2430,8 +2431,19 @@ footer span{margin:auto 5px;}
 	line-height:40px;
 }
 
-
-
+.mk-fixed-scrolltop {
+    position: fixed;
+    z-index: 999;
+    bottom: 10px;
+    right: 20px;
+}
+.mk-fixed-scrolltop .rocket-icon {
+    cursor: pointer;
+    width: 120px;
+    height: 80px;
+    display: none;
+    background: transparent url("../upload/icons/up-1.png") no-repeat scroll center center;
+}
 
 
 

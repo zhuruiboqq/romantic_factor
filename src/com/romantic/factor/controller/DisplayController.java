@@ -91,7 +91,7 @@ public class DisplayController {
 			return "romantic_factor/makeup_makeer.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "romantic_factor/404.html";
+			return "romantic_factor/404.jsp";
 		}
 
 	}
@@ -116,7 +116,7 @@ public class DisplayController {
 			return "romantic_factor/makeup_works.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "romantic_factor/404.html";
+			return "romantic_factor/404.jsp";
 		}
 
 	}
@@ -138,7 +138,7 @@ public class DisplayController {
 			return "romantic_factor/photoer.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "romantic_factor/404.html";
+			return "romantic_factor/404.jsp";
 		}
 
 	}
@@ -163,7 +163,7 @@ public class DisplayController {
 			return "romantic_factor/photoer_works.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "romantic_factor/404.html";
+			return "romantic_factor/404.jsp";
 		}
 
 	}
@@ -187,7 +187,7 @@ public class DisplayController {
 			return "romantic_factor/dress_wedding.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "romantic_factor/404.html";
+			return "romantic_factor/404.jsp";
 		}
 
 	}
@@ -205,52 +205,57 @@ public class DisplayController {
 
 	@RequestMapping(value = "/training.do")
 	public String training() {
-		return "romantic_factor/training.html";
+		return "romantic_factor/training.jsp";
 	}
 
 	@RequestMapping(value = "/mealTripInfo.do")
 	public String mealTripInfo() {
-		return "romantic_factor/meal_trip_info.html";
+		return "romantic_factor/meal_trip_info.jsp";
 	}
 
 	@RequestMapping(value = "/mealRecommendLocation.do")
 	public String mealRecommendLocation() {
-		return "romantic_factor/meal_recommend_location.html";
+		return "romantic_factor/meal_recommend_location.jsp";
 	}
 
 	@RequestMapping(value = "/mealLeaveWords.do")
 	public String mealLeaveWords() {
-		return "romantic_factor/meal_leave_words.html";
+		return "romantic_factor/meal_leave_words.jsp";
 	}
 
 	@RequestMapping(value = "/mealIntroduce.do")
 	public String mealIntroduce() {
-		return "romantic_factor/meal_introduce.html";
+		return "romantic_factor/meal_introduce.jsp";
 	}
 
 	@RequestMapping(value = "/brandStory.do")
 	public String brandStory() {
-		return "romantic_factor/brand_story.html";
+		return "romantic_factor/brand_story.jsp";
 	}
 
 	@RequestMapping(value = "/brandPromise.do")
 	public String brandPromise() {
-		return "romantic_factor/brand_promise.html";
+		return "romantic_factor/brand_promise.jsp";
 	}
 
 	@RequestMapping(value = "/brandCharacteristic.do")
 	public String brandCharacteristic() {
-		return "romantic_factor/brand_characteristic.html";
+		return "romantic_factor/brand_characteristic.jsp";
 	}
 
 	@RequestMapping(value = "/brandAboutUs.do")
 	public String brandAboutUs() {
-		return "romantic_factor/brand_about_us.html";
+		return "romantic_factor/brand_about_us.jsp";
 	}
 
 	@RequestMapping(value = "/brandAboutPrivacy.do")
 	public String brandAboutPrivacy() {
-		return "romantic_factor/brand_about_privacy.html";
+		return "romantic_factor/brand_about_privacy.jsp";
 	}
 
+	@RequestMapping(value = "/initImage.do")
+	public void initImage() {
+		
+//		return "romantic_factor/brand_about_privacy.jsp";
+	}
 }

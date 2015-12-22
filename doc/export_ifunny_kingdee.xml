@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="copy_normal_files" name="Create deploy file for Project romantic_factor " basedir="../">
+	<tstamp description="DeployDate">
+		<format property="CurrentDate" pattern="yyyy-MM-dd" />
+	</tstamp>
+	<tstamp>
+		<format property="CurrentTime" pattern="[yyyy-MM-dd HH:mm:ss]" />
+	</tstamp>
+	<property name="BackupLocation" value="doc/deploy_build" />
+
+	<target name="copy_normal_files">
+		<echo message="${CurrentTime}: copy files " level="warning" />
+		<copy todir="${BackupLocation}/${CurrentDate}/" overwrite="true">
+			<fileset dir="WebContent/">
+				<exclude name="**/images/**" />
+				<exclude name="**/upload/**" />
+				<exclude name="**/WEB-INF/lib/**" />
+				<exclude name="**/WEB-INF/jdbc-mysql.properties" />
+			</fileset>
+		</copy>
+		<copy todir="${BackupLocation}/${CurrentDate}/WEB-INF/" overwrite="true">
+			<fileset dir="build/">
+			</fileset>
+		</copy>
+	</target>
+</project>

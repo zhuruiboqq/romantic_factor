@@ -19,59 +19,51 @@ import com.romantic.factor.constants.Constants;
  */
 public class JacksonUtil {
 
-    private static ObjectMapper mapper = new ObjectMapper();
+	private static ObjectMapper mapper = new ObjectMapper();
 
-    static {
-        mapper.configure(
-                org.codehaus.jackson.map.SerializationConfig.Feature.WRITE_NULL_MAP_VALUES,
-                false);
-        mapper.setSerializationInclusion(Inclusion.NON_NULL);
-        mapper.configure(
-                org.codehaus.jackson.map.SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS,
-                false);
-        mapper.setSerializationConfig(mapper.getSerializationConfig()
-                .withDateFormat(Constants.NORMAL_DATETIME_FORMAT));
-        mapper.configure(
-                org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES,
-                false);
-    }
+	static {
+		mapper.configure(org.codehaus.jackson.map.SerializationConfig.Feature.WRITE_NULL_MAP_VALUES, false);
+		mapper.setSerializationInclusion(Inclusion.NON_NULL);
+		mapper.configure(org.codehaus.jackson.map.SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false);
+		mapper.setSerializationConfig(mapper.getSerializationConfig().withDateFormat(Constants.NORMAL_DATETIME_FORMAT));
+		mapper.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+	}
 
-    public static <T> T doJacksonDeserialize(String str, Class<T> clazz) {
-        if (StringUtils.isBlank(str)) {
-            return null;
-        }
-        try {
-            return mapper.readValue(str, clazz);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
+	public static <T> T doJacksonDeserialize(String str, Class<T> clazz) {
+		if (StringUtils.isBlank(str)) {
+			return null;
+		}
+		try {
+			return mapper.readValue(str, clazz);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
 
-    @SuppressWarnings("unchecked")
-    public static <T> T doJacksonDeserialize(String str,
-            TypeReference<T> typeRef) {
-        if (StringUtils.isBlank(str)) {
-            return null;
-        }
-        try {
-            return (T) mapper.readValue(str, typeRef);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
+	@SuppressWarnings("unchecked")
+	public static <T> T doJacksonDeserialize(String str, TypeReference<T> typeRef) {
+		if (StringUtils.isBlank(str)) {
+			return null;
+		}
+		try {
+			return (T) mapper.readValue(str, typeRef);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
 
-    public static String doJacksonSerialize(Object object) {
-        if (null == object) {
-            return "null";
-        }
-        try {
-            return mapper.writeValueAsString(object);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
+	public static String doJacksonSerialize(Object object) {
+		if (null == object) {
+			return "null";
+		}
+		try {
+			return mapper.writeValueAsString(object);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
 
 }

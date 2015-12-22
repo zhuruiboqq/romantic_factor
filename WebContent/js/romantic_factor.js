@@ -313,4 +313,24 @@ var imgaddurl = function () {
 $('.big_pic').on('click', 'img', function(event) {
 	window.open( this.src );
 });
+
+function makeScrollTop() {
+	var ft = ['<div class="mk-fixed-scrolltop">', '<div class="rocket-icon"></div>', '<div class="contact-bottom-wrap">', '</div>', '</div>'];
+	jQuery('body').append(ft.join(' '));
+	jQuery(window).scroll(function() {
+		if (jQuery(this).scrollTop() > 100) {
+			jQuery('.rocket-icon').fadeIn();
+		} else {
+			jQuery('.rocket-icon').fadeOut();
+		}
+	});
+	jQuery('.mk-fixed-scrolltop .rocket-icon').click(function() {
+		jQuery("html, body").animate({
+			scrollTop: 0
+		},
+		200);
+		return false;
+	});
+};
+makeScrollTop();
 });

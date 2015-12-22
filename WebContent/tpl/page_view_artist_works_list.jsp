@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/tpl/taglibs.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ include file="/tpl/taglibs.jsp"%>
 <article class="">
 	<div class="footer_name_content dress_not_footer">
 		<div class="footer_top">
@@ -27,7 +27,9 @@
 	</nav>
 
 	<div class="makeer_info">
-		<img src="${artistInfo.img_url}" />
+		<div class="left">
+			<img src="${artistInfo.img_url}" />
+		</div>
 		<div class="makeer_detail">
 			<p style="font-size: 24px; color: #353535;">${artistInfo.name}</p>
 			<p style="font-size: 24px; line-height: 50px;">${artistInfo.degree}</p>
