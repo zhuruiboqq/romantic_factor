@@ -254,7 +254,7 @@ public class DisplayController {
 	}
 
 	@RequestMapping(value = "/initImage.do")
-	public void initImage() {
+	public void initImage(HttpServletRequest req, Model model) {
 		
 //		return "romantic_factor/brand_about_privacy.jsp";
 	}
