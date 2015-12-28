@@ -1,5 +1,6 @@
 package com.romantic.factor.controller;
 
+import java.io.File;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,12 +19,14 @@ import com.romantic.factor.entity.MakeupMakeer;
 import com.romantic.factor.entity.MakeupWorks;
 import com.romantic.factor.entity.Photoer;
 import com.romantic.factor.entity.PhotoerWorks;
+import com.romantic.factor.service.AttachmentImageService;
 import com.romantic.factor.service.DressService;
 import com.romantic.factor.service.MakeupMakeerService;
 import com.romantic.factor.service.MakeupWorksService;
 import com.romantic.factor.service.PhotoerService;
 import com.romantic.factor.service.PhotoerWorksService;
 import com.romantic.factor.service.WeddingParamService;
+import com.romantic.factor.util.FileUploadUtil;
 
 @Controller
 @RequestMapping(value = "/")
@@ -32,6 +35,8 @@ public class DisplayController {
 
 	@Autowired
 	private WeddingParamService weddingParamService;
+	@Autowired
+	private AttachmentImageService attachmentImageService;
 	@Autowired
 	private PhotoerService photoerService;
 	@Autowired
@@ -182,7 +187,7 @@ public class DisplayController {
 			pageHandler.setTotalRecordCount(totalRecordCount);
 			pageHandler.setCurPageResultList(pageResultList);
 			pageHandler.processModel(model);
-			
+
 			model.addAttribute("type", type);
 			return "romantic_factor/dress_wedding.jsp";
 		} catch (Exception e) {
@@ -255,7 +260,10 @@ public class DisplayController {
 
 	@RequestMapping(value = "/initImage.do")
 	public void initImage(HttpServletRequest req, Model model) {
-		
-//		return "romantic_factor/brand_about_privacy.jsp";
+		String realPathStr = FileUploadUtil.getRealPath(req, "");
+		File rootPath = new File(realPathStr);
+		attachmentImageService.initImageData(rootPath);
+		//		FileUploadUtil.getSavePath(req, billType, fileName);
+		//		return "romantic_factor/brand_about_privacy.jsp";
 	}
 }

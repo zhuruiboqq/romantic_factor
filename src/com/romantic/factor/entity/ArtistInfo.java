@@ -12,6 +12,8 @@ public class ArtistInfo extends BaseDataInfo {
 	private String degree;//学位
 	private String technical;//职称
 	private String content;//个人简介
+	private String artistType;//艺术家类型：化妆师makeup、摄影师photographer、
+	private String worksPath;
 	private int priority;//优先级
 
 	public AttachmentImageInfo getPersonImage() {
@@ -84,6 +86,22 @@ public class ArtistInfo extends BaseDataInfo {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getArtistType() {
+		return artistType;
+	}
+
+	public void setArtistType(String artistType) {
+		this.artistType = artistType;
+	}
+
+	public String getWorksPath() {
+		return worksPath;
+	}
+
+	public void setWorksPath(String worksPath) {
+		this.worksPath = worksPath;
 	}
 
 	public int getPriority() {

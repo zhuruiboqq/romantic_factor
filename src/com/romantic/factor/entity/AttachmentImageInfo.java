@@ -11,7 +11,7 @@ public class AttachmentImageInfo extends BaseDataInfo{
 	private String storePath;//服务器保存路径
 	private String displayURL;//页面显示路径
 	private String permission;//权限
-	private int sizeInByte;//字节大小
+	private long sizeInByte;//字节大小
 	private String size;//人为识别大小
 	private String extName;//文件扩展名
 	private int width;//图片宽度
@@ -34,10 +34,10 @@ public class AttachmentImageInfo extends BaseDataInfo{
 	public void setPermission(String permission) {
 		this.permission = permission;
 	}
-	public int getSizeInByte() {
+	public long getSizeInByte() {
 		return sizeInByte;
 	}
-	public void setSizeInByte(int sizeInByte) {
+	public void setSizeInByte(long sizeInByte) {
 		this.sizeInByte = sizeInByte;
 	}
 	public String getSize() {

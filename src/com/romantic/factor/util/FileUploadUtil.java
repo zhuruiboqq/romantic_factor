@@ -64,9 +64,4 @@ public class FileUploadUtil {
 			return "D:\\" + path;
 		return req.getSession().getServletContext().getRealPath(path);
 	}
-
-	public static String getFileName(String uploadPath) {
-		File uploadFile = new File(uploadPath);
-		return uploadFile.getName();
-	}
 }

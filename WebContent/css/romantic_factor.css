@@ -959,18 +959,85 @@ footer span{margin:auto 5px;}
 	height:65px;
 }
 .dress_content_nav{width:313px;}
-.dress_content_list li{list-style:none;float:left;}
-.dress_content_list li a{
+
+.artist_content_list li{list-style:none;float:left;}
+.artist_content_list li a{
     display: block;
     width: 100%;
     height: 350px;
     line-height: 350px;
 }
-.dress_content_list img{
+.artist_content_list img{
 	box-sizing:border-box;
 	max-height:350px;
 	max-width:266px;
 }
+.artist_content_list{margin:48px auto 0px;width:1200px;}
+.artist_content_list span{
+	display:block;
+	text-align:center;
+}
+.artist_content_list div{
+	margin-top:15px;
+	margin-left:28px;
+}
+.artist_content_list div a{
+	display:inline-block;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height:26px;
+	width:86px;
+	margin-left:10px;
+	border:1px solid #b5b5b5;
+	color:#000000;
+	font-size:14px;
+	line-height:26px;
+	text-align: center;
+	border-radius: 5px;
+}
+.artist_content_list div a:hover{
+	/*border:none;*/
+	color:#FFFFFF;
+	background-color: #313131;
+}
+.artist_content_list li span{
+	font-size: 14px;
+	color:#353535;
+	font-family: 'Microsoft YaHei';
+}
+.artist_content_list li span.en{
+	font-size: 16px;
+	color:#696969;
+	font-family: 'Arial';
+}
+.artist_content_list li{
+	margin-left:45px;
+	margin-bottom:45px;
+}
+.artist_content_list a:hover img{border:1px solid #ffffff;}
+.artist_content_list .dress_content_list_fri{margin-left:0px;}
+
+
+
+
+.dress_content_list li{list-style:none;float:left;}
+.dress_content_list li a{
+    display: block;
+    width: 100%;
+    /*
+    height: 350px;
+    line-height: 350px;
+    */
+}
+.dress_content_list img{
+	box-sizing:border-box;
+	max-height:350px;
+	max-width:266px;
+	border:1px solid #ffffff; 
+}
+.dress_content_list a:hover img{border:1px solid #c0c0c0; }
+
 .dress_content_list{margin:48px auto 0px;width:1200px;}
 .dress_content_list span{
 	display:block;
@@ -1014,8 +1081,8 @@ footer span{margin:auto 5px;}
 	margin-left:45px;
 	margin-bottom:45px;
 }
-.dress_content_list a:hover img{border:1px solid #ffffff;}
 .dress_content_list .dress_content_list_fri{margin-left:0px;}
+
 .dress_btns a{
 	display:block;
 	float:left;
@@ -2434,7 +2501,7 @@ footer span{margin:auto 5px;}
 .mk-fixed-scrolltop {
     position: fixed;
     z-index: 999;
-    bottom: 10px;
+    bottom: 60px;
     right: 20px;
 }
 .mk-fixed-scrolltop .rocket-icon {
@@ -2444,28 +2511,3 @@ footer span{margin:auto 5px;}
     display: none;
     background: transparent url("../upload/icons/up-1.png") no-repeat scroll center center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
