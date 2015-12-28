@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
 
 import com.romantic.factor.common.util.PageHandler;
 import com.romantic.factor.dao.MakeupWorksDao;
 import com.romantic.factor.entity.MakeupWorks;
 
+@Service
 public class MakeupWorksService {
 	@Autowired
 	private MakeupWorksDao makeupWorksDao;

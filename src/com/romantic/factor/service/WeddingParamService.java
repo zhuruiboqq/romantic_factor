@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
 
 import com.romantic.factor.dao.WeddingParamDao;
 import com.romantic.factor.entity.WeddingParam;
 
-
+@Service
 public class WeddingParamService {
 	@Autowired
 	private WeddingParamDao weddingParamDao;

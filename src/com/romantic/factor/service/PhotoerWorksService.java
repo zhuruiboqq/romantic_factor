@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
+import org.springframework.stereotype.Service;
 
 import com.romantic.factor.common.util.PageHandler;
 import com.romantic.factor.dao.PhotoerWorksDao;
 import com.romantic.factor.entity.PhotoerWorks;
 
+@Service
 public class PhotoerWorksService {
 	@Autowired
 	private PhotoerWorksDao photoerWorksDao;

@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
 
 import com.romantic.factor.common.util.PageHandler;
 import com.romantic.factor.dao.PhotoerDao;
 import com.romantic.factor.entity.Photoer;
 
-
+@Service
 public class PhotoerService {
 	@Autowired
 	private PhotoerDao photoerDao;

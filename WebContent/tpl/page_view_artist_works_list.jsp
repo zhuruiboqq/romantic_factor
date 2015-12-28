@@ -9,7 +9,7 @@
 				<h1>
 					<img src="images/foot_pic1.png" />
 				</h1>
-				<h2>羅 蔓 緣 素 婚 紗 攝 影</h2>
+				<h2>罗 蔓 缘 素 婚 纱 摄 影</h2>
 			</div>
 			<div class="line no_show right"></div>
 			<img class="icon_right right" src="images/icon_left.png" />
