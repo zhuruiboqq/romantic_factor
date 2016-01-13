@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>romantic factor</title>
-<link href="css/romantic_factor.css" rel='stylesheet' type='text/css'>
+<link href="css/romantic_factor.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script src="js/custom.modernizr.js"></script>
 </head>
