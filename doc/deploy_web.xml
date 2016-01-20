@@ -16,10 +16,13 @@
 				<exclude name="**/upload/**" />
 				<exclude name="**/WEB-INF/lib/**" />
 				<exclude name="**/WEB-INF/jdbc-mysql.properties" />
+				<exclude name="**/WEB-INF/log4j.properties" />
 			</fileset>
 		</copy>
 		<copy todir="${BackupLocation}/${CurrentDate}/WEB-INF/" overwrite="true">
 			<fileset dir="build/">
+				<exclude name="classes/application.local.properties" />
+				<exclude name="classes/romantic_factor/**" />
 			</fileset>
 		</copy>
 	</target>
