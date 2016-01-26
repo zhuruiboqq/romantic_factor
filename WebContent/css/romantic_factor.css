@@ -1415,8 +1415,16 @@ footer span{margin:auto 5px;}
     position: fixed;
     z-index: 999;
     bottom: 60px;
-    right: 20px;
+    right: 50px;
 }
+.mk-fixed-scrolltop .rocket-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: none;
+    background: transparent url("../upload/icons/up-2.gif") no-repeat scroll center center;
+}
+/*
 .mk-fixed-scrolltop .rocket-icon {
     cursor: pointer;
     width: 120px;
@@ -1424,3 +1432,4 @@ footer span{margin:auto 5px;}
     display: none;
     background: transparent url("../upload/icons/up-1.png") no-repeat scroll center center;
 }
+*/
