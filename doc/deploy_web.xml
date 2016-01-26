@@ -25,5 +25,6 @@
 				<exclude name="classes/romantic_factor/**" />
 			</fileset>
 		</copy>
+		<zip destfile="${BackupLocation}/${CurrentDate}_rf.zip" basedir="${BackupLocation}/${CurrentDate}" />
 	</target>
 </project>
