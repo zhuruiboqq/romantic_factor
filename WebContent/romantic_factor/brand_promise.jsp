@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/tpl/taglibs.jsp" %>
-<rf:contentHeader />
+<rf:contentHeaderFront />
 	
 	<header>
     	<div class="header_content">
@@ -195,4 +195,4 @@
         <div class="right"><a href="mealLeaveWords.do">留言板</a></div>
     </footer>
     
-<rf:contentFooter/>
+<rf:contentFooterFront/>

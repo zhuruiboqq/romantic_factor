@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/tpl/taglibs.jsp" %>
-<rf:contentHeader />
+<rf:contentHeaderFront />
 	<link href="css/romantic_index.css" rel='stylesheet' type='text/css'>
 	<div class="header_content index_header">
 		<!-- <img id="header_logo_img" src="images/logo.png" /> -->
@@ -332,4 +332,4 @@
     </div>
     <script src="js/mousewheel.min.js"></script>
 <script src="js/mymousewheel.js"></script>
-<rf:contentFooter/>
+<rf:contentFooterFront/>

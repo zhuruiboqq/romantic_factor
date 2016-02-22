@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %> 
 <%@ include file="/tpl/taglibs.jsp" %>
-<rf:contentHeader />
+<rf:contentHeaderFront />
 	<header>
     	<div class="header_content header_content_two">
         	
@@ -18,4 +18,4 @@
     
     <%@ include file="/tpl/footer_more.jsp" %>
 
-<rf:contentFooter/>
+<rf:contentFooterFront/>

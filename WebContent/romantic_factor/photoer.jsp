@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/tpl/taglibs.jsp" %>
-<rf:contentHeader />
+<rf:contentHeaderFront />
 	<header>
 	<div class="header_content header_content_two">
-
 		<%@ include file="/tpl/head_with_title_img.jsp"%>
 	</div>
 	</header>
@@ -18,4 +17,4 @@
 
 	<%@ include file="/tpl/footer_more.jsp"%>
 
-<rf:contentFooter />
+<rf:contentFooterFront />

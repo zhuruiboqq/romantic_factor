@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/tpl/taglibs.jsp" %>
-<rf:contentHeader />
+<rf:contentHeaderFront />
 	<header>
     	<div class="header_content">
         	<img id="header_logo_img" src="images/logo.png" />
@@ -9,4 +9,4 @@
     </header>
     
      <%@ include file="/tpl/footer_more.jsp" %>
-<rf:contentFooter/>    
+<rf:contentFooterFront/>    
