@@ -4,7 +4,7 @@
 
 <header>
 	<div class="header_content">
-		<%@ include file="/WEB-INF/jsp/front/tpl/head_with_title_img.jsp"%>
+		<%@ include file="/tpl/head_with_title_img.jsp"%>
 	</div>
 </header>
 

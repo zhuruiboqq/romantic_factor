@@ -102,6 +102,7 @@
             	<p>化妆作品</p>
                 <span>MAKEUP</span>
             </div>
+			<a href="makeupMakeer.do?page=1">
             <div class="content_box_pic" id="pic_mouse_e">
             <!-- 后台请注意，这里以ul为一屏单位，总共是三屏幕，但是考虑客户特殊需求，为了不太影响性能，这里将最后一个ul复制放到第一个位置，同事将第一个复制一份放到最后。       -->   
                 <ul><!-- 这是第三个 -->
@@ -216,7 +217,8 @@
                     </li>
                 </ul>
             </div>
-            <!--<div class="wavy_line"></div>-->
+            </a>
+			<!--<div class="wavy_line"></div>-->
             <a class="prev" href="JavaScript:;"></a>
             <a class="next" href="JavaScript:;"></a>
             </div>

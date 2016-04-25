@@ -26,5 +26,6 @@
 			</fileset>
 		</copy>
 		<zip destfile="${BackupLocation}/${CurrentDate}_rf.zip" basedir="${BackupLocation}/${CurrentDate}" />
+		<delete dir="${BackupLocation}/${CurrentDate}" />
 	</target>
 </project>
