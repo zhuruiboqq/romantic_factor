@@ -3,7 +3,6 @@
 <rf:contentHeaderFront />
 <header>
 	<div class="header_content header_content_two">
-
 		<%@ include file="/tpl/head_with_title_img.jsp"%>
 	</div>
 </header>
